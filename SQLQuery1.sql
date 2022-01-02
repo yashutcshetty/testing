@@ -1,6 +1,6 @@
 use PM10_2092
 
-create table candidate
+create table candidate2
 (
 CID int identity(1,1) Primary key Not null,
 m_apply_c_list varchar(500),
@@ -9,13 +9,15 @@ nunique int
 
 drop table candidate
 
---'FirstName~John~LastName~KIm~Address~India~Phone~9878987789~PIN~656765'
+
 
 select * from dbo.candidate
 
 insert into candidate(m_apply_c_list,nunique) values ('FirstName~John~LastName~KIm~Address~India~Phone~9878987789~PIN~656765',1)
 
 insert into candidate(m_apply_c_list,nunique) values ('FN~Park~LN~KIm~Address~China~Phone~9878987789~PIN~101011',2)
+
+insert into candidate(m_apply_c_list,nunique) values ('FN~Park~LN~KIm~Address~China~Phone~9878987789~PIN~101011',3)
 declare @nunique int = 1
 
 declare @text varchar(100)
@@ -73,6 +75,7 @@ cross apply STRING_SPLIT(m_apply_c_list, '~') s) E
 
 
 --------------------------------------------------
+--changes done to practise
 
 
 
