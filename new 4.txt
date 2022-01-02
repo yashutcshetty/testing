@@ -13,12 +13,12 @@ SELECT DISTINCT NULL as FieldValueDictionaryID,
 			('so_Background_Candidate_Birth_Month','so_Background_Candidate_Birth_Day','so_Background_Candidate_Birth_Year')) = 3 THEN
 			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Month') + '/' + 
 			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Day') + '/' + 
-			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Year')
+		
 	   WHEN (select count(1) FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName IN 
 			('so_Background_CandidateBirthMonth','so_Background_CandidateBirthDay','so_Background_CandidateBirthYear')) = 3 THEN
 			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_CandidateBirthMonth') + '/' + 
 			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_CandidateBirthDay') + '/' + 
-			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_CandidateBirthYear')
+
 	   ELSE NULL END as FieldValue
 	   
 	   
@@ -31,6 +31,17 @@ AND
 CASE 
 	   WHEN (select count(1) FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName IN 
 			('so_Background_Candidate_Birth_Month','so_Background_Candidate_Birth_Day','so_Background_Candidate_Birth_Year')) = 3 THEN
+			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Month') + '/' + 
+			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Day') + '/' + 
+			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Year')
+	   WHEN (select count(1) FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName IN 
+			('so_Background_CandidateBirthMonth','so_Background_CandidateBirthDay','so_Background_CandidateBirthYear')) = 3 THEN
+			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_CandidateBirthMonth') + '/' + 
+			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_CandidateBirthDay') + '/' + 
+			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_CandidateBirthYear')
+	   ELSE NULL END IS NOT NULL
+
+	   ('so_Background_Candidate_Birth_Month','so_Background_Candidate_Birth_Day','so_Background_Candidate_Birth_Year')) = 3 THEN
 			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Month') + '/' + 
 			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Day') + '/' + 
 			(SELECT fvi.FieldValue FROM FieldValueDictionary_5115 fvi WHERE fvi.nunique = fv.nunique AND fvi.FieldName = 'so_Background_Candidate_Birth_Year')
